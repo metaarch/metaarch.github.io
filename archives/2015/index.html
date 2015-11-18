@@ -121,7 +121,7 @@
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu menu-left">
       
         
         <li class="menu-item menu-item-home">
@@ -130,16 +130,6 @@
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
             Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
-            
-            Categories
           </a>
         </li>
       
@@ -164,16 +154,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-esiea">
           <a href="/esiea" rel="section">
             
@@ -189,6 +169,16 @@
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <form class="site-search-form" >
+  <input type="text" id="ts-search-input" class="menu-search-input">
+</form>
+
+
+
+    </div>
   
 </nav>
 
@@ -235,7 +225,7 @@
         
             <a class="post-title-link" href="/2015/11/17/开始我的博客/" itemprop="url">
               
-                <span itemprop="name">开始我的博客</span>
+                <span itemprop="name">虛擬化技術學習(1)</span>
               
             </a>
         
@@ -304,17 +294,17 @@
           </div>
 
           <div class="site-state-item site-state-categories">
-            <a href="/categories">
+            
               <span class="site-state-item-count">0</span>
               <span class="site-state-item-name">categories</span>
-              </a>
+              
           </div>
 
           <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">0</span>
+            
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">tags</span>
-              </a>
+              
           </div>
 
         </nav>
@@ -437,6 +427,28 @@
   <script type="text/javascript" src="/js/bootstrap.js"></script>
 
   
+  <script>
+    var customRenderActFunction = function(item) {
+      var out = '<p class="title">' + item['document']['title'].split(" // ")[0] + '</p>';
+      return out;
+    };
+    var option = {
+      engineKey: 'metaarch',
+      renderActFunction: customRenderActFunction
+    };
+    (function(w,d,t,u,n,s,e){
+      s = d.createElement(t);
+      s.src = u;
+      s.async = 1;
+      w[n] = function(r){
+        w[n].opts = r;
+      };
+      e = d.getElementsByTagName(t)[0];
+      e.parentNode.insertBefore(s, e);
+    })(window,document,'script','//tinysou-cdn.b0.upaiyun.com/ts.js','_ts');
+    _ts(option);
+  </script>
+
   
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
